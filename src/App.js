@@ -1,26 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
+//css
 import './App.css';
+//components
+import Navigation from './components/Navigation/Navigation';
+import Aboutme from './components/Aboutme/Aboutme';
+import Hardskill from './components/Hardskill/Hardskill';
+import Softskill from './components/Softskill/Softskill';
+import Experience from './components/Experience/Experience';
+import Works from './components/Works/Works';
+//dom
+import { BrowserRouter, Route } from 'react-router-dom';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className='app-wrapper'>
+        <Navigation/>
+        <div className="wrapper-app-content">
+          <Route path='/aboutme' component={Aboutme}/>
+          <Route path='/hardskill' component={Hardskill}/>
+          <Route path='/softskill' component={Softskill}/>
+          <Route path='/experience' component={Experience}/>
+          <Route path='/works' component={Works}/>
+        </div>
+      </div>
+    </BrowserRouter>
   );
 }
-
 export default App;
