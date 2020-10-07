@@ -4,10 +4,12 @@ import Descript from "./Descript/Descript";
 import HardLink from "./HardLinks/HardLinks";
 
 const Hardskill = (props) =>{
+
+
     return(
         <div className={s.hardskills}>
             <div className={s.hardskills__itemSoft}>
-                <HardLink/>
+                <HardLink items = {props.items}/>
             </div>
             <div className={s.hardskills__itemSoftDis}>
                 <Descript/>

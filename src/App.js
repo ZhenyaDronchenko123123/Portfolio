@@ -11,14 +11,18 @@ import Works from './components/Works/Works';
 //dom
 import { BrowserRouter, Route } from 'react-router-dom';
 
-const App = () => {
+
+
+
+
+const App = (props) => {
   return (
     <BrowserRouter>
       <div className='app-wrapper'>
         <Navigation/>
         <div className="wrapper-app-content">
           <Route path='/aboutme' component={Aboutme}/>
-          <Route path='/hardskill' component={Hardskill}/>
+          <Route path='/hardskill' render={ () => <Hardskill items ={props.posts.items} />}/>
           <Route path='/softskill' component={Softskill}/>
           <Route path='/experience' component={Experience}/>
           <Route path='/works' component={Works}/>
